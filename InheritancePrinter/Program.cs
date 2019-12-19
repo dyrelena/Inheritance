@@ -6,8 +6,7 @@ namespace InheritancePrinter
     class Program
     {
         static void Main(string[] args)
-        {
-            //string printingTest = "Text for test printing";
+        {            
             PrinterColor printColorText = new PrinterColor();
             Printer printText = printColorText;
             printColorText.PrintValue = "Text for test printing";
@@ -38,7 +37,7 @@ namespace InheritancePrinter
 
         public string PrintValue { get => printValue; set => printValue = value; }
 
-        public void Print(string value)
+        public virtual void Print(string value)
         {
             PrintValue = value;
             Console.WriteLine("\n{0}", value);
@@ -68,7 +67,7 @@ namespace InheritancePrinter
             colorName = Console.ReadLine();
             Console.ForegroundColor = colorSet[colorName];            
         }
-        public void Print()
+        public override void Print()
         {
             string errorValue = "Error! Please Reboot Universe";
             Console.ForegroundColor = ConsoleColor.Red;
